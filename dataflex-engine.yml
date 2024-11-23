@@ -1,0 +1,32 @@
+spring:
+  application:
+    name: DATAFLEX-ENGINE
+  config:
+    import: 
+      optional:
+        configserver:
+  cloud:
+    config:
+      uri: http://localhost:8888
+      fail-fast: true
+      retry:
+        max-attempts: 5 # Config Server 재시도 횟수
+        initial-interval: 1000 # 첫 재시도 대기 시간 (밀리초)
+        multiplier: 1.5 # 재시도 간격 증가 배율
+        max-interval: 5000 # 최대 재시도 간격 (밀리초)
+      import-check: 
+        enabled: false
+        
+server:
+  port: 9003        
+      
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+              
+logging:
+  level:
+    org.springframework: DEBUG
+    com.example: DEBUG
