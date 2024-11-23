@@ -1,0 +1,10 @@
+example:
+  key: "example-value-from-server"
+spring:
+  datasource:
+    url: jdbc:h2:mem:testdb # H2 메모리 데이터베이스
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+server:
+  custom-property: "Custom value for testing"
