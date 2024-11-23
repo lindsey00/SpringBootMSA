@@ -1,10 +1,12 @@
 example:
-  key: "example-value-from-server"
+  key: "example-value"
 spring:
+  application:
+    name: config-client
   datasource:
-    url: jdbc:h2:mem:testdb # H2 메모리 데이터베이스
+    url: jdbc:h2:mem:testdb
     username: sa
     password:
     driver-class-name: org.h2.Driver
 server:
-  custom-property: "Custom value for testing"
+  port: 8888
